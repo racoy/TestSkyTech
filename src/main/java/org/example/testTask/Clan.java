@@ -3,7 +3,7 @@ package org.example.testTask;
 public class Clan {
     private final long id;
     private String name;
-    private volatile int gold;
+    private int gold;
 
     public long getId() {
         return id;
