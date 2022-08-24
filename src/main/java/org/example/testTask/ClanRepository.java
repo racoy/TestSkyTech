@@ -10,12 +10,11 @@ import static org.example.DatabaseParameters.*;
 
 public enum ClanRepository {
     INSTANCE;
-
-    final static int BATCH_SIZE = 10;
+    private final static int BATCH_SIZE = 10;
 
     public boolean saveClanToDb(Clan clan) {
         try (Connection conn = ConnectionPool.INSTANCE.getConnection();
-             Statement stmt = conn.createStatement();
+             Statement stmt = conn.createStatement()
         ) {
             String sql = getSqlQueryForUpdateClan(clan);
             return stmt.executeUpdate(sql) != 0;
@@ -63,7 +62,7 @@ public enum ClanRepository {
 
         try (Connection conn = ConnectionPool.INSTANCE.getConnection();
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(query);
+             ResultSet rs = stmt.executeQuery(query)
         ) {
             if (rs.next()) {
                 Clan clan = new Clan(rs.getLong("id"));
