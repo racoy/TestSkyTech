@@ -31,6 +31,6 @@ public class SynchronisationManager {
     }
 
     private static void updatingClans() {
-        clanRepository.updateClansInDb(ClanManager.getInMemoryClans());
+        clanRepository.updateClansGoldInDb(ClanManager.getInMemoryClans());
     }
 }
