@@ -1,5 +1,6 @@
 package org.example.testTask;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -29,7 +30,7 @@ public class ClanManager {
     }
 
     public static Collection<Clan> getInMemoryClans() {
-        return clanMap.values();
+        return new ArrayList<>(clanMap.values());
     }
 
     /**
